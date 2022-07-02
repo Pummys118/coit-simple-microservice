@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: pummyscoitsimplemicroservice 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pummyscoitsimplemicroservice
+  template:
+    metadata:
+      labels:
+        app: pummyscoitsimplemicroservice 
+    spec:
+      containers:
+        - name: pummyscoitsimplemicroservice 
+          image: akasjaj.azurecr.io/pummyscoitsimplemicroservice
+          ports:
+          - containerPort: 8080
